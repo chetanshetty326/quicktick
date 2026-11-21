@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Enforce HTTPS / block cleartext for all network connections -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Specific domain rules for QuickTick production domains -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">api.quicktick.shop</domain>
+        <domain includeSubdomains="true">quicktick.shop</domain>
+        <domain includeSubdomains="true">api.quicktick.in</domain>
+        <domain includeSubdomains="true">quicktick.in</domain>
+    </domain-config>
+</network-security-config>
